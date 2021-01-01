@@ -28,7 +28,6 @@ def is_not_expired(time_to_compare, key):
             return True
         else:
             raise_exception("Error: Time-to-live of %s expired" % key)
-
     return True
 
 def create(key,value,timeout=0):
