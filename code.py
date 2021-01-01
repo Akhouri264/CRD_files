@@ -4,7 +4,9 @@ if sys.version_info < (3, 0):
 else:
     from threading import Thread
 import time
+
 data_dict = dict()
+
 def raise_exception(message):
     """
     Used to raise exception
@@ -26,7 +28,7 @@ def is_not_expired(time_to_compare, key):
             return True
         else:
             raise_exception("Error: Time-to-live of %s expired" % key)
-            return False
+
     return True
 
 def create(key,value,timeout=0):

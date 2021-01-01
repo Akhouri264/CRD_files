@@ -2,14 +2,13 @@
 #run the MODULE of MAIN FILE and import main file as a library
 import sys
 import code as x 
-from code import create
 #importing the main file("code" is the name of the file I have used) as a library 
 if sys.version_info < (3, 0):
     from thread import *
 else:
     from threading import Thread
     
-x.create("srctest",25)
+x.create("srctest", 25)
 #to create a key with key_name,value given and with no time-to-live property
 
 x.create("src",70,3600)
@@ -33,7 +32,7 @@ x.delete("srctest")
 #we can access these using multiple threads like
 key_name = "hello"
 value = 5
-timeout=300
+timeout=10
 
 t1=Thread(target=(x.create or x.read or x.delete),args=(key_name,value,timeout)) #as per the operation
 t1.start()
